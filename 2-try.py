@@ -1,0 +1,5 @@
+print('Bismaillah')
+print('Bismaillah')
+print('Bismaillah')
+print('Bismaillah')
+print('Bismaillah')
