@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎲 Dice Roll · sleek & playful</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #1e2b3c 0%, #0f1722 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            padding: 1.5rem;
+            margin: 0;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 64px;
+            padding: 2.5rem 2.8rem 3.2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+            width: 100%;
+            max-width: 680px;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 215, 150, 0.15);
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            font-weight: 500;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            color: #f5e7d9;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+        h1 span {
+            background: linear-gradient(135deg, #fbcb9e, #f7b07c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+        }
+
+        /* dice display */
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.2rem 0 2rem;
+        }
+
+        .dice {
+            width: 160px;
+            height: 160px;
+            background: #fcf3e6;
+            border-radius: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            padding: 24px;
+            box-shadow: 
+                0 20px 30px -8px rgba(0,0,0,0.7),
+                inset 0 -6px 0 #c0aa8e,
+                inset 0 4px 12px rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+            transform: scale(1);
+        }
+        .dice.rolling {
+            animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        }
+        @keyframes shake {
+            0% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(12deg) scale(1.08); }
+            40% { transform: rotate(-10deg) scale(0.95); }
+            60% { transform: rotate(8deg) scale(1.04); }
+            80% { transform: rotate(-4deg) scale(0.98); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        .dot {
+            background: #1e1e2a;
+            border-radius: 50%;
+            width: 80%;
+            height: 80%;
+            place-self: center;
+            box-shadow: inset 0 4px 4px rgba(0,0,0,0.3), 0 2px 0 rgba(255,255,255,0.3);
+            transition: background 0.1s;
+        }
+        .dot.empty {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* result & roll button */
+        .result-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .roll-value {
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(4px);
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 215, 150, 0.25);
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #f5e3d0;
+            letter-spacing: 1px;
+            min-width: 120px;
+            text-align: center;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+            transition: 0.2s;
+        }
+        .roll-value span {
+            color: #fdcc9a;
+        }
+
+        .roll-btn {
+            background: #f6c9a0;
+            border: none;
+            padding: 1rem 2.8rem;
+            border-radius: 80px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2a38;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            box-shadow: 0 12px 0 #b28b6b, 0 6px 20px rgba(0,0,0,0.4);
+            transition: all 0.08s linear;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .roll-btn:active {
+            transform: translateY(8px);
+            box-shadow: 0 4px 0 #b28b6b, 0 8px 18px rgba(0,0,0,0.5);
+        }
+        .roll-btn:disabled {
+            opacity: 0.6;
+            transform: translateY(4px);
+            box-shadow: 0 6px 0 #b28b6b;
+            pointer-events: none;
+        }
+        .roll-btn i {
+            font-size: 1.6rem;
+        }
+
+        /* history / log */
+        .history {
+            margin-top: 2.2rem;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(6px);
+            border-radius: 60px;
+            padding: 1rem 1.8rem;
+            border: 1px solid rgba(255, 215, 150, 0.08);
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            color: #bfb1a2;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            padding: 0 0.2rem 0.2rem;
+            border-bottom: 1px dashed rgba(255, 215, 150, 0.1);
+        }
+        .history-header span:last-child {
+            color: #e2cdb8;
+            font-weight: 400;
+            cursor: pointer;
+            transition: 0.1s;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .history-header span:last-child:hover {
+            background: rgba(255, 215, 150, 0.15);
+            color: #f5dcc8;
+        }
+
+        .history-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem 0.7rem;
+            padding: 0.6rem 0.2rem 0.2rem;
+            min-height: 3.2rem;
+        }
+
+        .history-item {
+            background: rgba(255, 215, 150, 0.08);
+            backdrop-filter: blur(2px);
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #f5ddd0;
+            border: 1px solid rgba(255, 215, 150, 0.08);
+            transition: 0.1s;
+        }
+        .history-item:first-child {
+            background: rgba(255, 215, 150, 0.2);
+            color: #fce6d2;
+            border-color: rgba(255, 215, 150, 0.2);
+        }
+        .empty-history {
+            color: #7b6e60;
+            font-style: italic;
+            font-weight: 300;
+            padding: 0.2rem 0.6rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #6a5f53;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            opacity: 0.8;
+        }
+        footer i {
+            font-style: normal;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        @media (max-width: 500px) {
+            .game-card { padding: 2rem 1.2rem; border-radius: 40px; }
+            .dice { width: 130px; height: 130px; padding: 18px; }
+            .roll-btn { padding: 0.8rem 1.8rem; font-size: 1.2rem; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="game-card">
+    <h1>
+        <span>🎲</span> Dice<span>Roll</span>
+    </h1>
+
+    <!-- dice visual -->
+    <div class="dice-container">
+        <div class="dice" id="diceElement">
+            <!-- dots will be injected via js -->
+        </div>
+    </div>
+
+    <div class="result-area">
+        <div class="roll-value" id="rollDisplay">
+            ⚡ <span id="rollNumber">-</span>
+        </div>
+        <button class="roll-btn" id="rollBtn">
+            <i>🎲</i> Roll
+        </button>
+    </div>
+
+    <!-- history log -->
+    <div class="history">
+        <div class="history-header">
+            <span>📋 roll history</span>
+            <span id="clearHistory">clear</span>
+        </div>
+        <div class="history-list" id="historyList">
+            <span class="empty-history">no rolls yet</span>
+        </div>
+    </div>
+    <footer>
+        <i>⚡ click roll · feel the luck</i>
+    </footer>
+</div>
+
+<script>
+    (function() {
+        // --- DOM refs ---
+        const diceEl = document.getElementById('diceElement');
+        const rollNumberEl = document.getElementById('rollNumber');
+        const rollBtn = document.getElementById('rollBtn');
+        const historyList = document.getElementById('historyList');
+        const clearHistoryBtn = document.getElementById('clearHistory');
+
+        // --- state ---
+        let history = [];                // store numbers (max 12)
+        let isRolling = false;
+
+        // --- dot patterns (index 0 = value 1 ... index 5 = value 6) ---
+        const dotPatterns = [
+            // 1
+            [0,0,0, 0,1,0, 0,0,0],
+            // 2
+            [0,0,1, 0,0,0, 1,0,0],
+            // 3
+            [0,0,1, 0,1,0, 1,0,0],
+            // 4
+            [1,0,1, 0,0,0, 1,0,1],
+            // 5
+            [1,0,1, 0,1,0, 1,0,1],
+            // 6
+            [1,0,1, 1,0,1, 1,0,1]
+        ];
+
+        // --- render dice based on value (1-6) ---
+        function renderDice(value) {
+            const pattern = dotPatterns[value - 1];
+            if (!pattern) return;
+
+            // clear dice
+            diceEl.innerHTML = '';
+            // build 9 dot cells
+            for (let i = 0; i < 9; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                if (pattern[i] === 0) {
+                    dot.classList.add('empty');
+                }
+                diceEl.appendChild(dot);
+            }
+        }
+
+        // --- update history UI ---
+        function renderHistory() {
+            historyList.innerHTML = '';
+            if (history.length === 0) {
+                const emptyMsg = document.createElement('span');
+                emptyMsg.className = 'empty-history';
+                emptyMsg.textContent = 'no rolls yet';
+                historyList.appendChild(emptyMsg);
+                return;
+            }
+
+            // show newest first (most recent at the beginning)
+            const reversed = [...history].reverse();
+            for (let val of reversed) {
+                const item = document.createElement('span');
+                item.className = 'history-item';
+                item.textContent = val;
+                historyList.appendChild(item);
+            }
+        }
+
+        // --- add new roll to history (keep max 12) ---
+        function addToHistory(value) {
+            history.push(value);
+            if (history.length > 12) {
+                history.shift();
+            }
+            renderHistory();
+        }
+
+        // --- clear history ---
+        function clearHistory() {
+            history = [];
+            renderHistory();
+            // also reset the dice display to ? (optional) but we keep last roll
+            // we don't reset dice value, only history – but we can also set rollNumber to "-" if we want
+            // but better to keep showing last roll. 
+            // If history empty and we want to show dash? we keep current display.
+            // if you prefer resetting display, uncomment:
+            // rollNumberEl.textContent = '-';
+            // renderDice(1); // reset to 1? but it's better to keep last result.
+            // we'll keep last roll visible, only history clears.
+        }
+
+        // --- roll the dice ---
+        function rollDice() {
+            if (isRolling) return;
+
+            isRolling = true;
+            rollBtn.disabled = true;
+            diceEl.classList.add('rolling');
+
+            // generate random number 1-6 (like random.randrange(1,6) in python)
+            const result = Math.floor(Math.random() * 6) + 1;
+
+            // update display after a tiny delay (so animation plays)
+            setTimeout(() => {
+                // update number
+                rollNumberEl.textContent = result;
+                // update dice graphic
+                renderDice(result);
+                // add to history
+                addToHistory(result);
+
+                // remove rolling class & re-enable
+                diceEl.classList.remove('rolling');
+                isRolling = false;
+                rollBtn.disabled = false;
+            }, 350); // match animation length (0.5s but we release early)
+        }
+
+        // --- initialise ---
+        function init() {
+            // default: show a "1" on dice, but no history, display "-"
+            renderDice(1);
+            rollNumberEl.textContent = '-';
+            history = [];
+            renderHistory();
+
+            // event listeners
+            rollBtn.addEventListener('click', rollDice);
+            clearHistoryBtn.addEventListener('click', clearHistory);
+
+            // keyboard shortcut: press Space or Enter to roll
+            document.addEventListener('keydown', (e) => {
+                if (e.key === ' ' || e.key === 'Space' || e.key === 'Enter') {
+                    e.preventDefault();
+                    rollDice();
+                }
+            });
+        }
+
+        init();
+    })();
+</script>
+</body>
+</html>
