@@ -1,0 +1,14 @@
+install miniconda {one time on the system}
+Open "anaconda prompt" terminal
+type following command in terminal
+
+conda create -n [env_name] python==3.12
+
+conda activate [env_name]
+
+Note:-
+after ths Base>> [env_name]
+
+
+to check environments list type following commands in terminal
+conda env list
