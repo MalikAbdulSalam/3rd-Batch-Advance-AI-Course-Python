@@ -1,0 +1,250 @@
+# Python Programming Fundamentals
+
+## Industry-Level Practical Assignment
+
+# Assignment Title
+
+**Employee Payroll & Performance Evaluation System Using Python Operators**
+
+---
+
+# 1. Assignment Overview
+
+Operators are fundamental building blocks in software development. They are extensively used in payroll systems, accounting software, banking applications, e-commerce platforms, and enterprise resource planning (ERP) systems for performing calculations, updating records, and making business decisions.
+
+In this assignment, students will develop a console-based **Employee Payroll & Performance Evaluation System** that uses Python's Arithmetic Operators, Assignment Operators, and Ternary Operator to automate salary calculations and employee performance evaluation.
+
+---
+
+# 2. Business Scenario
+
+ABC Technologies has hired you as a **Junior Python Developer** to develop a payroll calculation module for its Human Resource Management System (HRMS).
+
+The HR department wants an application that:
+
+* Calculates employee salaries.
+* Computes bonuses and tax deductions.
+* Updates salary values using assignment operators.
+* Determines whether an employee qualifies for a performance bonus using conditional expressions.
+* Generates a professional payroll summary.
+
+---
+
+# 3. Learning Objectives
+
+Upon successful completion of this assignment, students will be able to:
+
+* Apply arithmetic operators to perform business calculations.
+* Use assignment operators for updating variables efficiently.
+* Implement decision-making using the ternary operator.
+* Write modular and maintainable Python programs.
+* Follow Python coding standards (PEP 8).
+* Build real-world business applications.
+
+---
+
+# 4. Functional Requirements
+
+The application must:
+
+* Accept employee information from the user.
+* Perform salary calculations.
+* Update salary values using assignment operators.
+* Evaluate employee performance using a ternary operator.
+* Display a formatted payroll report.
+* Handle invalid user input gracefully.
+
+---
+
+# 5. User Inputs
+
+The application should collect the following information:
+
+* Employee ID
+* Employee Name
+* Basic Salary
+* Overtime Hours
+* Overtime Rate
+* Performance Score (0–100)
+* Tax Percentage
+
+---
+
+# 6. Task 1 – Arithmetic Operators
+
+## Objective
+
+Perform payroll calculations using arithmetic operators.
+
+### Calculations
+
+Compute:
+
+* Overtime Pay
+* Gross Salary
+* Tax Amount
+* Net Salary
+
+### Formulae
+
+* Overtime Pay = Overtime Hours × Overtime Rate
+* Gross Salary = Basic Salary + Overtime Pay
+* Tax Amount = Gross Salary × (Tax Percentage / 100)
+* Net Salary = Gross Salary − Tax Amount
+
+### Arithmetic Operators to Use
+
+* Addition (+)
+* Subtraction (-)
+* Multiplication (*)
+* Division (/)
+* Modulus (%)
+* Exponent (**)
+* Floor Division (//)
+
+### Expected Output
+
+Display all calculated values with appropriate labels and currency formatting.
+
+---
+
+# 7. Task 2 – Assignment Operators
+
+## Objective
+
+Demonstrate updating variable values using assignment operators.
+
+Use the following operators in meaningful scenarios:
+
+* += (Add annual bonus)
+* -= (Deduct insurance amount)
+* *= (Increase salary by performance multiplier)
+* /= (Calculate monthly salary)
+* //= (Determine complete payment cycles)
+* %= (Calculate remaining bonus allocation)
+
+Display the value after each update.
+
+---
+
+# 8. Task 3 – Ternary Operator
+
+## Objective
+
+Evaluate employee eligibility for a performance bonus.
+
+### Business Rule
+
+If the Performance Score is **80 or above**, the employee is eligible for a performance bonus; otherwise, they are not.
+
+Example:
+
+Performance Status = "Eligible for Bonus" if performance_score >= 80 else "Not Eligible"
+
+Display the employee's performance status in the payroll report.
+
+---
+
+# 9. Bonus Challenge
+
+Extend the application by adding:
+
+* Annual Salary Calculation
+* Monthly Salary Breakdown
+* Employee Grade (A, B, C)
+* Performance Rating
+* Salary Increment Percentage
+* Multiple Employee Processing using loops
+
+---
+
+# 10. Sample Output
+
+```
+=========================================
+        EMPLOYEE PAYROLL REPORT
+=========================================
+
+Employee ID        : EMP101
+Employee Name      : Ali Khan
+
+Basic Salary       : $3,500.00
+Overtime Pay       : $450.00
+Gross Salary       : $3,950.00
+Tax Amount         : $395.00
+Net Salary         : $3,555.00
+
+Performance Score  : 88
+Performance Status : Eligible for Bonus
+
+Monthly Salary     : $296.25
+
+=========================================
+```
+
+---
+
+# 11. Non-Functional Requirements
+
+The solution must:
+
+* Follow PEP 8 coding standards.
+* Use meaningful variable names.
+* Include comments explaining calculations.
+* Validate numeric input.
+* Use proper indentation.
+* Organize code into reusable functions.
+* Avoid duplicate code.
+
+---
+
+# 12. Deliverables
+
+Students must submit:
+
+* Python source code (.py)
+* Sample input/output screenshots
+* README.md explaining the project
+* Flowchart of program logic
+* Short report (1–2 pages) describing the implementation
+
+---
+
+# 13. Evaluation Rubric
+
+| Criteria                            |   Marks |
+| ----------------------------------- | ------: |
+| Arithmetic Operators Implementation |      30 |
+| Assignment Operators Usage          |      20 |
+| Ternary Operator Logic              |      15 |
+| Code Quality & Modularity           |      15 |
+| Input Validation & Error Handling   |      10 |
+| Documentation & Report              |      10 |
+| **Total**                           | **100** |
+
+---
+
+# 14. Industry Best Practices
+
+Students are expected to:
+
+* Follow PEP 8 coding conventions.
+* Use descriptive variable and function names.
+* Validate all user inputs.
+* Separate input, processing, and output logic into functions.
+* Keep calculations accurate and well documented.
+* Produce clean and readable console output.
+* Test the application with multiple employee records.
+* Write reusable code that can be integrated into larger HR or payroll systems.
+
+---
+
+# 15. Expected Learning Outcomes
+
+After completing this assignment, students will be able to:
+
+* Apply Python arithmetic operators to solve real-world business problems.
+* Update variables efficiently using assignment operators.
+* Implement concise conditional logic using the ternary operator.
+* Build a professional payroll processing application.
+* Follow software engineering best practices for readability, maintainability, and scalability.
