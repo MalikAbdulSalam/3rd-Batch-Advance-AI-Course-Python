@@ -1,0 +1,353 @@
+Industrial-Level Python String Methods Assignment
+
+Course: Python Programming
+Level: Intermediate to Advanced (Industry-Oriented)
+Topic: Python String Methods
+Marks: 100
+Duration: 1 Week
+
+Scenario
+
+You have joined a software company as a Python Developer. Your task is to develop different modules that process customer data, log files, emails, product descriptions, usernames, passwords, and reports using Python String methods.
+
+Rules
+
+Use only Python.
+Do not use AI-generated solutions.
+Every task must use the specified string methods.
+Write clean and commented code.
+Submit screenshots of outputs.
+Use functions wherever possible.
+Task 1: Employee Registration System (10 Marks)
+
+A company stores employee names entered by HR.
+
+Sample Input
+employee = "   muhammad ali khan   "
+Requirements
+
+Use the following methods:
+
+strip()
+title()
+upper()
+lower()
+capitalize()
+Expected Output
+Original:
+"   muhammad ali khan   "
+
+After strip:
+muhammad ali khan
+
+Title:
+Muhammad Ali Khan
+
+Upper:
+MUHAMMAD ALI KHAN
+
+Lower:
+muhammad ali khan
+
+Capitalize:
+Muhammad ali khan
+Task 2: Email Validation System (10 Marks)
+
+Given
+
+email = "student123@gmail.com"
+
+Check
+
+startswith()
+endswith()
+find("@")
+count("@")
+replace()
+
+Requirements
+
+Replace gmail.com with company.com
+Validate email format.
+Task 3: Product Code Analyzer (10 Marks)
+
+Given
+
+product = "LAPTOP-HP-2025"
+
+Use
+
+split()
+partition()
+rpartition()
+join()
+
+Output
+
+Brand
+Category
+Year
+
+Then create
+
+HP|LAPTOP|2025
+
+using join().
+
+Task 4: User Login Validator (10 Marks)
+
+Input
+
+username = "Student_01"
+password = "Pass12345"
+
+Check
+
+isidentifier()
+isalnum()
+isalpha()
+isdigit()
+isnumeric()
+
+Display whether username and password are valid.
+
+Task 5: Financial Report Cleaner (10 Marks)
+
+Input
+
+report = "     Total Sales = 250000 PKR      "
+
+Use
+
+strip()
+replace()
+split()
+
+Extract only
+
+250000
+
+Convert it into integer.
+
+Task 6: Password Strength Checker (10 Marks)
+
+Input
+
+password = "Python@123"
+
+Use
+
+islower()
+isupper()
+isalpha()
+isdigit()
+count()
+
+Display
+
+Number of digits
+Number of uppercase letters
+Number of lowercase letters
+Whether password contains symbols
+Task 7: Chat Application Formatter (10 Marks)
+
+Input
+
+message = "hello everyone welcome to python programming"
+
+Use
+
+title()
+capitalize()
+center()
+ljust()
+rjust()
+
+Display the message in different alignments.
+
+Task 8: Log File Processing (10 Marks)
+
+Given
+
+log = "INFO:Server Started Successfully"
+
+Use
+
+partition(":")
+split(":")
+find()
+index()
+
+Extract
+
+INFO
+Server Started Successfully
+Task 9: Customer Feedback Analyzer (10 Marks)
+
+Input
+
+feedback = "Good product. Good quality. Good packaging."
+
+Use
+
+count()
+replace()
+split()
+
+Find
+
+Number of "Good"
+Replace Good with Excellent
+Total words
+Task 10: Invoice Generator (10 Marks)
+
+Given
+
+name="Ali"
+product="Laptop"
+price=85000
+
+Use
+
+format()
+format_map()
+
+Generate
+
+Customer : Ali
+Product  : Laptop
+Price    : 85000
+Bonus Challenge (10 Marks)
+
+Create a Python program that demonstrates at least 35 different string methods from the list.
+
+The program should:
+
+Display method name
+Show original string
+Show output
+Explain the result in one line
+
+Example
+
+Method : upper()
+
+Original:
+python
+
+Output:
+PYTHON
+
+Explanation:
+Converted all letters to uppercase.
+Industrial Mini Project (30 Marks)
+Project Title
+
+Customer Support Ticket Processing System
+
+A software company receives customer complaints.
+
+Example Data
+
+tickets = [
+"   Laptop is Not Working   ",
+"My Password is forgotten",
+"Server ERROR occurred",
+"Need Refund immediately",
+"Email not received"
+]
+Requirements
+
+Your program must:
+
+Step 1
+
+Clean spaces using
+
+strip()
+Step 2
+
+Convert every ticket into Title Case
+
+title()
+Step 3
+
+Count total tickets
+
+Step 4
+
+Search tickets containing
+
+Password
+Refund
+Error
+Email
+
+using
+
+find()
+Step 5
+
+Replace
+
+Error
+
+with
+
+Issue
+Step 6
+
+Print tickets in aligned table
+
+using
+
+center()
+ljust()
+rjust()
+Step 7
+
+Generate report
+
+-----------------------------------------
+Customer Support Report
+-----------------------------------------
+
+Total Tickets : 5
+
+Password Issues : 1
+
+Refund Requests : 1
+
+Email Problems : 1
+
+Server Issues : 1
+
+-----------------------------------------
+Submission Requirements
+
+Submit:
+
+Python source code (.py)
+Output screenshots
+Flowchart (for Mini Project)
+Short report (2–3 pages)
+Explanation of every string method used
+GitHub repository (optional but recommended)
+Marking Rubric
+Criteria	Marks
+Correct implementation of string methods	35
+Code quality and readability	15
+Logic and problem solving	15
+Output formatting	10
+Mini Project	15
+Documentation and report	10
+Total	100
+Learning Outcomes
+
+After completing this assignment, students will be able to:
+
+Apply Python string methods to real-world problems.
+Build data-cleaning and validation systems.
+Process customer records, logs, and reports.
+Format professional text outputs.
+Develop industry-style Python applications using efficient string manipulation techniques.
