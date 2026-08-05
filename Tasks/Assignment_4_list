@@ -1,0 +1,138 @@
+Python Practical Assignment: Python Lists & Accessing List Items
+
+Course: Python Programming
+Topic: Python Lists & Access List Items
+Level: Beginner
+Marks: 20
+Instructions:
+
+Write all programs in Python.
+Add comments to explain your code.
+Take screenshots of the output.
+Submit both the .py file and screenshots.
+Part A: Basic List Creation (4 Marks)
+===================================================================================
+
+Q1.
+
+Create a list named fruits containing:
+
+Apple, Mango, Banana, Orange, Grapes
+
+Print the complete list.
+
+===================================================================================
+Q2.
+
+Create a list named numbers containing numbers from 10 to 100 with a gap of 10.
+
+Print the list.
+
+Expected Output:
+
+[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+Part B: Access List Items (6 Marks)
+===================================================================================
+Q3.
+
+Create the following list:
+
+colors = ["Red", "Green", "Blue", "Yellow", "Black"]
+
+Print:
+
+First item
+Second item
+Last item
+Third item
+===================================================================================
+Q4.
+
+Using the same list, print:
+
+First three colors
+Last two colors
+Colors from index 1 to 3
+
+(Hint: Use slicing.)
+
+Part C: User Input (4 Marks)
+===================================================================================
+Q5.
+
+Create a list of five student names.
+
+Ask the user to enter an index number.
+
+Display the student name at that index.
+
+Example:
+
+Enter index: 2
+
+Student Name: Ali
+===================================================================================
+Q6.
+
+Ask the user to enter three favorite foods.
+
+Store them in a list and print the complete list.
+
+Example:
+
+Enter Food 1:
+Enter Food 2:
+Enter Food 3:
+
+Your Favorite Foods:
+['Pizza', 'Burger', 'Biryani']
+Part D: Mini Challenges (6 Marks)
+===================================================================================
+Q7.
+
+Create a list:
+
+marks = [85, 76, 92, 68, 90]
+
+Print:
+
+Highest mark
+Lowest mark
+Total number of items
+===================================================================================
+Q8.
+
+Create a shopping list containing at least 8 items.
+
+Print:
+
+First item
+Fourth item
+Last item
+First five items
+Last three items
+Bonus Challenge (Optional +2 Marks)
+
+Create a list of 10 countries.
+
+Ask the user to enter an index.
+
+Display the country at that index.
+
+If the index is invalid, print:
+
+Invalid Index!
+
+(Hint: Use if or try-except.)
+===================================================================================
+Learning Outcomes
+
+After completing this assignment, students will be able to:
+
+Create Python lists.
+Access list elements using indexes.
+Use positive and negative indexing.
+Apply list slicing.
+Store user input in lists.
+Display selected list items.
+Solve simple list-based programming problems.
