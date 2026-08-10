@@ -1,0 +1,334 @@
+Python Industrial-Level Assignment
+Inventory Management & Sales Analysis System
+
+================================================================================
+Objective
+================================================================================
+Build a small Inventory Management System using:
+
+for loops
+while loops
+Lists
+if/else
+Variables
+input()
+Basic calculations
+
+The goal is to practice loops in a situation similar to a real business application.
+
+
+
+
+
+================================================================================
+Scenario
+================================================================================
+You are developing an inventory system for a retail company.
+
+The company stores information about its products:
+
+products = ["Laptop", "Mouse", "Keyboard", "Monitor", "Printer"]
+stock = [12, 50, 30, 8, 15]
+prices = [120000, 2500, 4500, 45000, 35000]
+
+The position of each product in the lists represents the same product.
+
+For example:
+
+products[0] → Laptop
+stock[0]    → 12
+prices[0]   → 120000
+
+
+
+
+
+
+================================================================================
+Part 1 — Display Inventory Using for Loop
+================================================================================
+Use a for loop to display all products.
+
+Expected output:
+
+========== INVENTORY ==========
+
+Product: Laptop
+Stock: 12
+Price: Rs. 120000
+
+Product: Mouse
+Stock: 50
+Price: Rs. 2500
+
+...
+Requirement
+
+Do not manually print every product.
+
+Use:
+
+for i in range(len(products)):
+
+
+
+
+
+================================================================================
+Part 2 — Calculate Inventory Value
+================================================================================
+Using a for loop, calculate the total value of all products in stock.
+
+Formula:
+
+Inventory Value = Stock × Price
+
+Expected output:
+
+Laptop Inventory Value: Rs. 1440000
+Mouse Inventory Value: Rs. 125000
+...
+
+At the end:
+
+Total Inventory Value: Rs. XXXXX
+
+
+
+
+================================================================================
+Part 3 — Find Low-Stock Products
+================================================================================
+The company considers a product low stock when stock is below 10.
+
+Use a for loop to find and display low-stock products.
+
+Expected:
+
+========== LOW STOCK PRODUCTS ==========
+
+Monitor → 8 units
+
+
+
+
+================================================================================
+Part 4 — Find the Most Expensive Product
+================================================================================
+Using a for loop, find the product with the highest price.
+
+Expected:
+
+Most Expensive Product: Laptop
+Price: Rs. 120000
+
+Do not use Python's built-in max() function.
+
+The purpose is to practice the loop.
+
+
+
+
+
+================================================================================
+Part 5 — Customer Purchase Using while
+================================================================================
+Now create a simple purchasing system.
+
+Display:
+
+========== PRODUCTS ==========
+
+1. Laptop
+2. Mouse
+3. Keyboard
+4. Monitor
+5. Printer
+0. Exit
+
+Use a while loop to repeatedly ask the customer:
+
+Enter product number:
+
+If the customer enters 0, stop the program.
+
+Example:
+
+Enter product number: 2
+Enter quantity: 3
+
+Mouse added to cart.
+
+Then continue asking for another product.
+
+
+
+
+
+================================================================================
+Part 6 — Validate Stock
+================================================================================
+Suppose the customer requests:
+
+Enter product number: 4
+Enter quantity: 20
+
+But only 8 monitors are available.
+
+Display:
+
+Insufficient stock!
+
+Available stock: 8
+
+Do not allow the purchase.
+
+The while loop should continue running.
+
+
+
+
+
+================================================================================
+Part 7 — Generate Customer Bill
+================================================================================
+After the customer selects 0, generate the final bill.
+
+Example:
+
+====================================
+             CUSTOMER BILL
+====================================
+
+Product       Quantity       Total
+------------------------------------
+Mouse            3          7500
+Keyboard         2          9000
+Printer          1         35000
+------------------------------------
+
+Subtotal: Rs. 51500
+====================================
+
+Use a for loop to display the purchased items.
+
+
+
+
+
+================================================================================
+Part 8 — Apply Discount
+================================================================================
+If the subtotal is:
+
+>= Rs. 100000
+
+give a 10% discount.
+
+If:
+
+>= Rs. 50000
+
+give a 5% discount.
+
+Otherwise:
+
+No discount
+
+Example:
+
+Subtotal: Rs. 120000
+Discount: Rs. 12000
+Final Amount: Rs. 108000
+
+
+
+
+================================================================================
+Part 9 — Sales Summary
+================================================================================
+After the purchase, display:
+
+========== SALES SUMMARY ==========
+
+Total Products Purchased: 4
+Total Items Purchased: 7
+Total Sales: Rs. 85000
+Discount: Rs. 4250
+Final Revenue: Rs. 80750
+
+Use loops to calculate the required values.
+
+
+
+
+
+================================================================================
+Industrial Challenge
+================================================================================
+Add a manager menu using a while loop:
+
+========== INVENTORY SYSTEM ==========
+
+1. View Inventory
+2. Find Low Stock
+3. Find Most Expensive Product
+4. Customer Purchase
+5. Inventory Value
+0. Exit
+
+Enter your choice:
+
+The program should continue running until the manager selects:
+
+0. Exit
+Your program should therefore contain:
+while loop
+   ↓
+Display Menu
+   ↓
+User selects option
+   ↓
+for loop
+   ↓
+Process list data
+   ↓
+Display result
+   ↓
+Return to menu
+
+
+
+
+
+================================================================================
+Learning Requirements
+================================================================================
+By completing this assignment, students should demonstrate that they can use:
+
+Concept	Where to use it
+List	Products, stock, prices
+for loop	Inventory processing
+while loop	Menu & purchasing
+if/else	Stock & discounts
+range()	List indexing
+input()	User interaction
+Variables	Calculations
+Nested logic	Purchase validation
+
+
+
+
+================================================================================
+Restrictions
+================================================================================
+Do not use:
+
+max()
+min()
+sum()
+sort()
+Pandas
+NumPy
+
+Everything should be solved using basic Python, lists, for, and while loops.
