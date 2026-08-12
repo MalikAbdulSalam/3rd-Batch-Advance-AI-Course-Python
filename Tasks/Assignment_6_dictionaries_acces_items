@@ -1,0 +1,101 @@
+Assignment: Accessing Items from a Python Dictionary
+Objective
+
+Practice accessing values from a dictionary using keys, and learn how to safely retrieve dictionary data.
+===============================================================
+Task 1 — Student Information
+===============================================================
+Create a dictionary:
+
+student = {
+    "name": "Ali",
+    "age": 20,
+    "city": "Islamabad",
+    "course": "Artificial Intelligence",
+    "marks": 85
+}
+
+Write Python statements to:
+
+Print the student's name.
+Print the student's age.
+Print the student's city.
+Print the student's course.
+Print the student's marks.
+
+===============================================================
+Task 2 — Employee Information
+===============================================================
+Create a dictionary containing:
+
+employee ID
+name
+department
+salary
+experience
+
+Then access and print each value using its key.
+===============================================================
+Task 3 — Product Information
+===============================================================
+Create a dictionary for a product:
+
+name
+price
+category
+quantity
+brand
+
+Write a program that prints:
+
+Product Name:
+Product Price:
+Product Category:
+Product Quantity:
+Product Brand:
+
+===============================================================
+Task 4 — Accessing Missing Keys
+===============================================================
+Given:
+
+car = {
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2022
+}
+
+Try to access:
+
+car["color"]
+
+Observe what happens.
+
+Then use .get() to access "color" without causing an error.
+===============================================================
+Task 5 — Mini Industrial Problem
+===============================================================
+Create an inventory dictionary:
+
+product = {
+    "id": 101,
+    "name": "Laptop",
+    "price": 85000,
+    "stock": 15,
+    "supplier": "ABC Electronics"
+}
+
+Write a program that calculates and displays:
+
+Product: Laptop
+Price: 85000
+Available Stock: 15
+Supplier: ABC Electronics
+Total Stock Value: 1275000
+
+Hint:
+
+total = product["price"] * product["stock"]
+Challenge ⭐
+
+Create a dictionary containing information about 5 students, where each student has a name and marks. Access the information of the third student and print their name and marks.
