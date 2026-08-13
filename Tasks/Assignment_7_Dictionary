@@ -1,0 +1,152 @@
+# Python Dictionary – Access, Change, Add & Remove Items
+
+## Assignment Title
+
+**Student Record Management Using Python Dictionaries**
+
+### Objective
+
+Create a Python program that manages student information using a dictionary. Your program must demonstrate how to:
+
+1. Access dictionary items
+2. Change dictionary items
+3. Add new items
+4. Remove items
+
+---
+
+## Task
+
+Create a dictionary containing information about a student:
+
+```python
+student = {
+    "name": "Ali",
+    "age": 20,
+    "course": "Python",
+    "marks": 75
+}
+```
+
+### Part 1 – Access Items
+
+Write Python statements to:
+
+* Print the student's name.
+* Print the student's age.
+* Print the student's course.
+* Print the student's marks.
+* Access the student's course using the `get()` method.
+
+### Part 2 – Change Items
+
+Modify the dictionary:
+
+* Change the student's age from `20` to `21`.
+* Change the course from `"Python"` to `"Machine Learning"`.
+* Change the marks from `75` to `85`.
+
+Print the dictionary after making the changes.
+
+### Part 3 – Add Items
+
+Add the following information:
+
+```text
+"city"       → "Islamabad"
+"attendance" → 90
+"grade"      → "A"
+```
+
+Print the updated dictionary.
+
+### Part 4 – Remove Items
+
+Remove the following items one by one:
+
+* `grade`
+* `attendance`
+
+Then remove the `city` item using the `pop()` method.
+
+Print the dictionary after each operation.
+
+### Part 5 – Final Student Record
+
+Display the final dictionary and print each remaining key and value separately.
+
+Expected format:
+
+```text
+name : Ali
+age : 21
+course : Machine Learning
+marks : 85
+```
+
+---
+
+## Challenge Task ⭐
+
+Create a second dictionary for another student.
+
+```python
+student2 = {
+    "name": "Sara",
+    "age": 19,
+    "course": "Data Science",
+    "marks": 92
+}
+```
+
+Perform the following operations:
+
+1. Access the student's name and marks.
+2. Change the marks to `95`.
+3. Add `"city": "Lahore"`.
+4. Add `"attendance": 96`.
+5. Remove the city.
+6. Print the final dictionary.
+
+---
+
+## Requirements
+
+Your program must use:
+
+* Dictionary
+* Accessing items using `[]`
+* `get()`
+* Changing values
+* Adding new key-value pairs
+* `pop()`
+* `del`
+* `print()`
+
+### Important
+
+Do **not** simply write the final dictionary. Perform every operation through Python code and display the result after each major step.
+
+## Bonus ⭐⭐
+
+Ask the user to enter:
+
+```text
+Student name
+Age
+Course
+Marks
+City
+```
+
+Store the information in a dictionary and then allow the user to:
+
+```text
+1. View student information
+2. Change student information
+3. Add new information
+4. Remove information
+5. Exit
+```
+
+Create a simple menu-driven dictionary management program.
