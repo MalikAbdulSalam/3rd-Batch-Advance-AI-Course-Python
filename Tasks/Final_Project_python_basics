@@ -1,6 +1,25 @@
-Assignment: Hotel Management System
-Objective
 
+=====================================================
+        Use this data
+=====================================================
+rooms = [101, 102, 103, 104, 105]
+room_types = ["Single", "Single", "Double", "Double", "Deluxe"]
+room_prices = [3000, 3000, 5000, 5000, 8000]
+room_status = ["Available", "Booked", "Available", "Booked", "Available"]
+
+
+
+customer_names = ["Ali", "Ahmed"]
+customer_rooms = [102, 104]
+customer_nights = [2, 3]
+customer_phones = ["03001234567", "03111234567"]
+
+
+=======================================================================
+Assignment: Hotel Management System
+=======================================================================
+
+Objective
 Create a console-based Hotel Management System using Python basics. The system should allow hotel staff to manage rooms, customers, bookings, and bills.
 
 Concepts to Use
