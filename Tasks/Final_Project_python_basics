@@ -1,0 +1,186 @@
+Assignment: Hotel Management System
+Objective
+
+Create a console-based Hotel Management System using Python basics. The system should allow hotel staff to manage rooms, customers, bookings, and bills.
+
+Concepts to Use
+Variables
+input() / print()
+if / elif / else
+for and while loops
+Lists
+Dictionaries
+Functions
+Basic arithmetic
+String operations
+Requirements
+
+Create a Python program with the following menu:
+
+========== HOTEL MANAGEMENT SYSTEM ==========
+
+
+1. Show Available Rooms
+2. Book a Room
+3. Customer Information
+4. Calculate Bill
+5. Checkout
+6. Exit
+1. Show Available Rooms
+
+Create at least 10 rooms.
+
+Each room should contain:
+
+Room number
+Room type
+Price per night
+Availability
+
+Example:
+
+Room 101 - Single - Rs. 3000 - Available
+Room 102 - Single - Rs. 3000 - Available
+Room 201 - Double - Rs. 5000 - Available
+Room 202 - Double - Rs. 5000 - Available
+Room 301 - Deluxe - Rs. 8000 - Available
+
+Display only the rooms that are currently available.
+
+2. Book a Room
+
+Ask the customer for:
+
+Customer name
+CNIC/ID
+Phone number
+Room number
+Number of nights
+
+The program should:
+
+Check whether the room exists.
+Check whether the room is available.
+Store customer information.
+Change the room status to Booked.
+Display a booking confirmation.
+
+Example:
+
+Booking Successful!
+
+
+Customer: Ali
+Room: 201
+Room Type: Double
+Nights: 3
+3. Customer Information
+
+Display information about currently booked rooms.
+
+Example:
+
+Customer Name: Ali
+Phone: 03001234567
+Room Number: 201
+Room Type: Double
+Nights: 3
+
+If there are no customers:
+
+No rooms are currently booked.
+4. Calculate Bill
+
+Calculate the customer's total bill:
+
+Total = Room Price × Number of Nights
+
+For example:
+
+Room Price = Rs. 5000
+Nights = 3
+
+
+Total = 5000 × 3
+      = Rs. 15000
+
+Display:
+
+========== BILL ==========
+
+
+Customer: Ali
+Room: 201
+Price/Night: Rs. 5000
+Nights: 3
+
+
+Total Bill: Rs. 15000
+5. Checkout
+
+Ask for the customer's room number.
+
+When the customer checks out:
+
+Display the final bill.
+Remove the customer's booking.
+Change the room status back to Available.
+
+Example:
+
+Checkout Successful!
+
+
+Customer: Ali
+Room: 201
+Total Bill: Rs. 15000
+
+
+Room 201 is now available.
+6. Exit
+
+Display:
+
+Thank you for using Hotel Management System!
+
+and terminate the program.
+
+⭐ Bonus Tasks
+
+Students who finish the basic requirements can add:
+
+Food ordering system
+Laundry charges
+Room service charges
+Discount system
+Tax calculation
+Multiple customers
+Search customer by name
+Search booking by room number
+Display total hotel revenue
+Admin login with username and password
+Example Final Menu
+====================================
+       HOTEL MANAGEMENT SYSTEM
+====================================
+
+
+1. Show Available Rooms
+2. Book a Room
+3. Customer Information
+4. Calculate Bill
+5. Checkout
+6. Exit
+
+
+Enter your choice: 
+Challenge
+
+Build the complete system using functions, such as:
+
+show_rooms()
+book_room()
+show_customers()
+calculate_bill()
+checkout()
+main()
